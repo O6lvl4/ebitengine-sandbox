@@ -4,27 +4,23 @@ import (
 	"log"
 
 	"github.com/hajimehoshi/ebiten/v2"
-	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
+
+	// hello-worldを表示させるファイルをインポート
+	"github.com/O6lvl4/sandbox-ebitengine/hello"
 )
 
-type Game struct{}
-
-func (g *Game) Update() error {
-	return nil
-}
-
-func (g *Game) Draw(screen *ebiten.Image) {
-	ebitenutil.DebugPrint(screen, "Hello, World!")
-}
-
-func (g *Game) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight int) {
-	return 320, 240
-}
-
 func main() {
+	// helloパッケージで宣言されたGameをgameへ格納
+	game, err := hello.NewGame()
+	if err != nil {
+		panic(err)
+	}
+
 	ebiten.SetWindowSize(640, 480)
 	ebiten.SetWindowTitle("Hello, World!")
-	if err := ebiten.RunGame(&Game{}); err != nil {
+
+	// helloパッケージで宣言されているGameを実行する
+	if err := ebiten.RunGame(game); err != nil {
 		log.Fatal(err)
 	}
 }

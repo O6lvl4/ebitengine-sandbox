@@ -1,4 +1,4 @@
-module o6lvl4.com/sandbox/ebitengine
+module github.com/O6lvl4/sandbox-ebitengine
 
 go 1.18
 
@@ -12,5 +12,7 @@ require (
 	golang.org/x/exp v0.0.0-20190731235908-ec7cb31e5a56 // indirect
 	golang.org/x/image v0.1.0 // indirect
 	golang.org/x/mobile v0.0.0-20220722155234-aaac322e2105 // indirect
+	golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4 // indirect
 	golang.org/x/sys v0.0.0-20220818161305-2296e01440c6 // indirect
+	golang.org/x/tools v0.1.12 // indirect
 )
